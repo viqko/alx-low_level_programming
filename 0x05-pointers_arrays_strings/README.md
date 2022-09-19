@@ -4,7 +4,8 @@ Learning pointers, arrays and strings
 0x05. C - Pointers, arrays and strings
 image
 
-A pointer is a variable that stores the memory address of another variable as its value. A pointer variable points to a data type (like int) of the same type, and is created with the * operator.
+### A pointer is a variable that stores the memory address of another variable as its value. A pointer variable points to a data type (like int) of the same type, and is created with the * operator.
+
 File: main.h is the header file containing all the function prototypes used in this project.
 
 File: 0-reset_to_98.c is a function that takes a pointer to an int as parameter and updates the value it points to to 98.
