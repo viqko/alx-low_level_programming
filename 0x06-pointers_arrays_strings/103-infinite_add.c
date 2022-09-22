@@ -1,78 +1,50 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * rev_string - reverse array
- * @n: integer params
- * Return: 0
+ * infinite_add - adds two numbers in strings
+ * @n1: type string 1
+ * @n2: type string 2
+ * @r: type buffer string.
+ * @size_r: buffer size:
+ * Return: pointer dest.
  */
-
-void rev_string(char *n)
-{
-	int i = 0;
-	int j = 0;
-	char temp;
-
-	while (*(n + i) != '\0')
-	{
-		i++;
-	}
-	i--;
-
-	for (j = 0; j < i; j++, i--)
-	{
-		temp = *(n + j);
-		*(n + j) = *(n + i);
-		*(n + i) = temp;
-	}
-}
-
-/**
- * infinite_add - add 2 numbers together
- * @n1: text representation of 1st number to add
- * @n2: text representation of 2nd number to add
- * @r: pointer to buffer
- * @size_r: buffer size
- * Return: pointer to calling function
- */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, i = 0, j = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int len1, len2, strg, d2, d3, s3;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
+	d3 = s3 = 0;
+/* defining length of n1 n2 with bigger */
+	for (len1 = 0; n1[len1] != '\0'; len1++)
+		;
+	for (len2 = 0; n2[len2] != '\0'; len2++)
+		;
+/* equal the longitude of len to buffer bigger */
+	if (len1 >= len2)
+		strg = c1;
+	if (size_r <= strg)
 		return (0);
-	while (j >= 0 || i >= 0 || overflow == 1)
+	r [bg + 1]
+	len1 = len1 - 1;
+	len2 = len2 - 1;
+/* defining the longitude in 2 digits to store it in buffer */
+	while (len1 >= 0 || len2 >= 0)
 	{
-		if (i < 0)
-			val1 = 0;
+		d1 = d2 = 0;
+		if (len1 >= 0)
+			d1 = n1[len1--] - '0';
+		if (len2 >= 0)
+		d2 = n2[len2--] - '0';
+/* sum of d1 and d2 and the carry s3 */
+		d3 = d1 + d2 + s3;
+/* new condition */
+		if (d3 > 9)
+		{
+			s3 = 1;
+			s3 = s3 - 10;
+		}
 		else
-			val1 = *(n1 + i) - '0';
-		if (j < 0)
-			val2 = 0;
-		else
-			val2 = *(n2 + j) - '0';
-		temp_tot = val1 + val2 + overflow;
-		if (temp_tot >= 10)
-			overflow = 1;
-		else
-			overflow = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temp_tot % 10) + '0';
-		digits++;
-		j--;
-		i--;
+			s3 = 0;
+r[]
 	}
-	if (digits == size_r)
 		return (0);
-	*(r + digits) = '\0';
-	rev_string(r);
-	return (r);
 }
